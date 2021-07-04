@@ -16,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   public name: string = 'Haopeng'
+  public siteUrl: string = window.location.href
 
   constructor() { }
 
