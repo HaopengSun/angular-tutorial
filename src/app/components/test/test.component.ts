@@ -28,6 +28,11 @@ export class TestComponent implements OnInit {
     "text-special": this.isSpecial
   }
 
+  public greating: string = ""
+  public eventType: string = ""
+
+  // text: string = "";
+
   constructor() { }
 
 
@@ -43,5 +48,21 @@ export class TestComponent implements OnInit {
   onColorChange(): void {
     this.hasError = !this.hasError
   }
+
+  onClick(): void {
+    if (!this.greating) {
+      this.greating = 'welcome come' + this.name
+    } else {
+      this.greating = ''
+    }
+  }
+
+  onEventInfo(event: any): void {
+    this.eventType = event.type
+  }
+
+  // onSubmit(){
+  //   console.log(this.text)
+  // }
 
 }
