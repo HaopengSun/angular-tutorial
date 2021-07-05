@@ -1,4 +1,9 @@
-<h4>interpolation: {{ name }}</h4>
-<h4>string functions used: {{ name.length + name.toUpperCase() }}</h4>
+<!-- two way to bind properties in html -->
+<h4 [id]="myId">interpolation: {{ name }}</h4>
+<!-- booleam attribute does not work with interpolation -->
+<input disabled="false" type="text" value="disabled">
+<input [disabled]="isDisabled" type="text" value="disabled binding attr">
+<input bind-disabled="isDisabled" type="text" value="disabled binding attr">
+<h4 id='{{myId}}'>string functions used: {{ name.length + name.toUpperCase() }}</h4>
 <h4>function greetUser return: {{ greetUser() }}</h4>
 <h4>site url: {{ siteUrl }}</h4>

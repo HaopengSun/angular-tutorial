@@ -16,6 +16,8 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   public name: string = 'Haopeng'
+  public myId: string = 'testID'
+  public isDisabled: boolean = true
   public siteUrl: string = window.location.href
 
   constructor() { }
