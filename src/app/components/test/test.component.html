@@ -5,5 +5,7 @@
 <input [disabled]="isDisabled" type="text" value="disabled binding attr">
 <input bind-disabled="isDisabled" type="text" value="disabled binding attr">
 <h4 id='{{myId}}'>string functions used: {{ name.length + name.toUpperCase() }}</h4>
-<h4>function greetUser return: {{ greetUser() }}</h4>
-<h4>site url: {{ siteUrl }}</h4>
+<!-- class binding -->
+<h4 [class.text-danger]="hasError" (dblclick)="onColorChange()">function greetUser return: {{ greetUser() }}</h4>
+<!-- binding class using obj -->
+<h4 [ngClass]="messageClasses">site url: {{ siteUrl }}</h4>

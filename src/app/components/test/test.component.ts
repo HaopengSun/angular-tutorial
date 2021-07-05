@@ -19,6 +19,14 @@ export class TestComponent implements OnInit {
   public myId: string = 'testID'
   public isDisabled: boolean = true
   public siteUrl: string = window.location.href
+  public hasError: boolean = true
+
+  public isSpecial: boolean = true
+  public messageClasses: object = {
+    "text-success": !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  }
 
   constructor() { }
 
@@ -30,6 +38,10 @@ export class TestComponent implements OnInit {
 
   greetUser(): string {
     return 'Hello ' + this.name
+  }
+
+  onColorChange(): void {
+    this.hasError = !this.hasError
   }
 
 }
