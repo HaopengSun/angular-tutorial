@@ -11,6 +11,8 @@ export class StructuralDirectiveComponent implements OnInit {
   public condition:boolean = false;
   public anotherCondition:boolean = true;
 
+  public color: string = "red"
+
   constructor() { }
 
   ngOnInit(): void {
