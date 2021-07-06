@@ -15,3 +15,22 @@
   <div *ngSwitchCase="'blue'">the color is blue</div>
   <div *ngSwitchCase="'gree'">the color is green</div>
 </div>
+
+<div *ngFor = "let color of colors; index as i">
+  <p>{{i}}: {{ color }}</p>
+</div>
+
+<p>whether it is the first element</p>
+<div *ngFor = "let color of colors; first as f">
+  <p>{{f}}: {{ color }}</p>
+</div>
+
+<p>whether it is the last element</p>
+<div *ngFor = "let color of colors; last as l">
+  <p>{{l}}: {{ color }}</p>
+</div>
+
+<p>whether its index is odd</p>
+<div *ngFor = "let color of colors; odd as o">
+  <p>{{o}}: {{ color }}</p>
+</div>

@@ -13,6 +13,8 @@ export class StructuralDirectiveComponent implements OnInit {
 
   public color: string = "red"
 
+  public colors: string[] = ['red', 'green', 'blue']
+
   constructor() { }
 
   ngOnInit(): void {
