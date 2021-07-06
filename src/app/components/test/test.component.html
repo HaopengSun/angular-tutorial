@@ -11,6 +11,6 @@
 <h4 [ngClass]="messageClasses">site url: {{ siteUrl }}</h4>
 <button (click)="onClick()">Greet</button><h4>{{ greating }}</h4>
 <button (click)="onEventInfo($event)">Event info</button><h4>{{ eventType }}</h4>
-<!-- <form (ngSubmit)="onSubmit()">
-  <input type="text" name="text">
-</form> -->
+
+<input #myInput type="text">
+<button (click)="logMassage(myInput.value)">Log in</button>

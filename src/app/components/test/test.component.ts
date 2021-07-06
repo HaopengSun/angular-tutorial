@@ -61,8 +61,8 @@ export class TestComponent implements OnInit {
     this.eventType = event.type
   }
 
-  // onSubmit(){
-  //   console.log(this.text)
-  // }
+  logMassage(value: any){
+    console.log(value)
+  }
 
 }
