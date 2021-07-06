@@ -31,7 +31,7 @@ export class TestComponent implements OnInit {
   public greating: string = ""
   public eventType: string = ""
 
-  // text: string = "";
+  public userType: string = ""
 
   constructor() { }
 

@@ -14,3 +14,8 @@
 
 <input #myInput type="text">
 <button (click)="logMassage(myInput.value)">Log in</button>
+
+<!-- ng model directive -->
+<h4>ngModel:</h4>
+<input [(ngModel)]="userType" type="text">
+{{ userType }}
