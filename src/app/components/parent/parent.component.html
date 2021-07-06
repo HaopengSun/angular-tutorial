@@ -1,0 +1,6 @@
+<p>parent component creates a variable and passes it to its children</p>
+
+<!-- $event is what is in the emit() -->
+<app-children (childEvent)= "message=$event" [parentData]="name"></app-children>
+{{ message }}
+
