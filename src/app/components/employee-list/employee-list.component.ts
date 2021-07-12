@@ -22,7 +22,8 @@ export class EmployeeListComponent implements OnInit {
 
   // get called when the view is initialized
   ngOnInit(): void {
-    this.employees = this._employeeService.getEmployee()
+    this._employeeService.getEmployee()
+        .subscribe(data => this.employees = data)
   }
 
 }

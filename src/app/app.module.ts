@@ -12,6 +12,7 @@ import { DepartmentListComponent } from './components/department-list/department
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { FirstComponent } from './components/first/first.component'
 import { EmployeeService } from './employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EmployeeService } from './employee.service';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
+    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
+    HttpClientModule
   ],
   providers: [
     EmployeeService // register a service in the app modules

@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Employee } from './employee';
 
 // injectable decorator
 // service might require another service as dependancies
@@ -6,16 +9,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmployeeService {
+  private _url: string = "/assets/employees.json"
 
-  constructor() { }
+  // add HttpClient dependency
+  constructor(private http: HttpClient) { }
 
-  getEmployee(){
-    return [
-      {'id': 1, 'name': 'a', 'age': 20},
-      {'id': 2, 'name': 'b', 'age': 25},
-      {'id': 3, 'name': 'c', 'age': 30},
-      {'id': 4, 'name': 'd', 'age': 35},
-      {'id': 5, 'name': 'e', 'age': 40},
-    ]
+  getEmployee(): Observable<Employee[]>{
+    // get method returns a obseravble of type Employee array
+    // cast the observable data using Employee interface
+    return this.http.get<Employee[]>(this._url)
   }
 }
