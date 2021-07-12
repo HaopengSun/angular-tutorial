@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRouti
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { FirstComponent } from './components/first/first.component'
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { FirstComponent } from './components/first/first.component'
     FormsModule,
     AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
   ],
-  providers: [],
+  providers: [
+    EmployeeService // register a service in the app modules
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
