@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { DepartmentDetailComponent } from './components/department-detail/department-detail.component';
 
 import { DepartmentListComponent } from './components/department-list/department-list.component'
 import { EmployeeListComponent } from './components/employee-list/employee-list.component'
@@ -11,6 +12,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/department', pathMatch: 'full'}, // or prefix
   {path: 'department', component: DepartmentListComponent},
   {path: 'employee', component: EmployeeListComponent},
+  // route parameter
+  {path:'department/:id', component: DepartmentDetailComponent},
   {path: 'first', component: FirstComponent},
   // deal with wildcart route (which must be the last component in this configuration)
   {path: '**', component: PageNotFoundComponent}
