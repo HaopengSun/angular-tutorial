@@ -13,6 +13,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { FirstComponent } from './components/first/first.component'
 import { EmployeeService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     ParentComponent,
     DepartmentListComponent,
     EmployeeListComponent,
-    FirstComponent
+    FirstComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
