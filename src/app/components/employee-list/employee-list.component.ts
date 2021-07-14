@@ -6,6 +6,7 @@ import { EmployeeService } from 'src/app/employee.service';
   selector: 'app-employee-list',
   template: `
   <h3>Employee List (service practice)</h3>
+  <h3>error message: {{ errorMsg }}</h3>
   <ul *ngFor="let employee of employees">
     <li>{{employee.name}}</li>
   </ul>
@@ -16,6 +17,7 @@ import { EmployeeService } from 'src/app/employee.service';
 export class EmployeeListComponent implements OnInit {
 
   public employees: any[] = []
+  public errorMsg: string = ''
 
   // declare as dependency
   constructor(private _employeeService: EmployeeService) { }
@@ -23,7 +25,8 @@ export class EmployeeListComponent implements OnInit {
   // get called when the view is initialized
   ngOnInit(): void {
     this._employeeService.getEmployee()
-        .subscribe(data => this.employees = data)
+        .subscribe(data => this.employees = data,
+          error => this.errorMsg = error)
   }
 
 }
