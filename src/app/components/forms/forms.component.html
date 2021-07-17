@@ -9,8 +9,12 @@
     <div class="form-group">
       <label>name</label>
       <!-- two way binding -->
-      <input type="text" class="form-control" name="name" [(ngModel)]="userModel.name">
+      <input type="text" required #name class="form-control" name="name" [(ngModel)]="userModel.name">
     </div>
+
+    <!-- ng-pristine/ng-dirty when users change the content in the form -->
+    <!-- ng-valid if the required form is not filled, it will change to ng-invalid -->
+    <h5>class "name": {{name.className}}</h5>
 
     <div class="form-group">
       <label>email</label>
