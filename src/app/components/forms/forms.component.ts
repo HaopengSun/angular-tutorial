@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-forms',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class FormsComponent implements OnInit {
 
   public topics: any[] = ['angular', 'react', 'vue']
+
+  // will be prefilled in the form
+  public userModel = new User('Rob', 'rob@test.com', 12345, 'react', 'morning', false)
 
   constructor() { }
 
