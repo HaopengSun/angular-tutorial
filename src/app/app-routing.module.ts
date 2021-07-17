@@ -5,6 +5,7 @@ import { DepartmentDetailComponent } from './components/department-detail/depart
 import { DepartmentListComponent } from './components/department-list/department-list.component'
 import { EmployeeListComponent } from './components/employee-list/employee-list.component'
 import { FirstComponent } from './components/first/first.component';
+import { FormsComponent } from './components/forms/forms.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   // route parameter
   {path:'department/:id', component: DepartmentDetailComponent},
   {path: 'first', component: FirstComponent},
+  {path: 'forms', component: FormsComponent},
   // deal with wildcart route (which must be the last component in this configuration)
   {path: '**', component: PageNotFoundComponent}
 ]; // sets up routes constant where you define your routes
