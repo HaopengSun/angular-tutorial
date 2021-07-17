@@ -35,4 +35,11 @@ export class DepartmentDetailComponent implements OnInit {
     let previousId = this.departmentID +1
     this.router.navigate(['/department', previousId])
   }
+
+  goToDepartments(){
+    let selectId = this.departmentID ? this.departmentID : null;
+    // optional route parameter
+    this.router.navigate(['/department', {id: selectId}]) // http://localhost:4200/department;id=1
+    //; id=1 will not affect the view
+  }
 }
