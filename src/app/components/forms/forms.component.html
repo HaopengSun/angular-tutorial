@@ -10,8 +10,10 @@
       <label>name</label>
       <!-- two way binding -->
       <!-- is-invalid is the bootstrap class for validation which will show red frame when the user input is not valid -->
-      <!-- class binding -->
+      <!-- class binding with a condition-->
       <!-- if name is invalid and touched, the is-invalid class will work -->
+      <!-- ngModle has classes and properties and #name="ngModel" is to get properties-->
+      <!-- #name you can get name.class and  #name="ngModel" you can get name.invalid directly-->
       <input type="text" required #name="ngModel"
       [class.is-invalid]="name.invalid && name.touched" class="form-control" name="name" [(ngModel)]="userModel.name">
     </div>
