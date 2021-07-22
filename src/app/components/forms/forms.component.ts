@@ -11,7 +11,7 @@ export class FormsComponent implements OnInit {
   public topics: any[] = ['angular', 'react', 'vue']
 
   // will be prefilled in the form
-  public userModel = new User('Rob', 'rob@test.com', 12345, 'react', 'morning', false)
+  public userModel = new User('', 'rob@test.com', 12345, 'react', 'morning', false)
 
   constructor() { }
 
