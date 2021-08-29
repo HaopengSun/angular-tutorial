@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+const User = require('../models/user')
+
 require('dotenv').config()
 
 const { MongoClient } = require('mongodb');
@@ -23,6 +25,19 @@ client.connect(err => {
 
 router.get('/', (req, res) => {
   res.send('from API folder')
+})
+
+// register API
+router.post('/register', (req, res) => {
+  let userData = req.body
+  let user = new User(userData)
+  user.save((error, registerUser) => {
+    if(error){
+      console.log(error)
+    } else {
+      res.status(200).send(registerUser)
+    }
+  })
 })
 
 module.exports = router;
