@@ -3,25 +3,18 @@ const router = express.Router()
 
 const User = require('../models/user')
 
-require('dotenv').config()
+const mongoose = require('mongoose');
 
-const { MongoClient } = require('mongodb');
+require('dotenv').config()
 
 const user = process.env.DB_USERNAME
 const pass = process.env.DB_PASS
 
-const uri = `mongodb+srv://${user}:${pass}@cluster0.burfe.mongodb.net/authentication?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  if (err) {
-    console.log('error: ', err)
-  } else {
-    console.log('connect to mongodb')
-    const collection = client.db("authentication").collection("users");
-    // perform actions on the collection object
-  }
-  client.close();
-});
+const uri = `mongodb+srv://haopengsun:${pass}@cluster0.wmr7y.mongodb.net/authentication?retryWrites=true&w=majority`;
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+.then((result) => console.log('connect to db'))
+.catch((err) => console.log(err))
 
 router.get('/', (req, res) => {
   res.send('from API folder')
@@ -31,13 +24,7 @@ router.get('/', (req, res) => {
 router.post('/register', (req, res) => {
   let userData = req.body
   let user = new User(userData)
-  user.save((error, registerUser) => {
-    if(error){
-      console.log(error)
-    } else {
-      res.status(200).send(registerUser)
-    }
-  })
+  user.save().then((result) => res.status(200).send(result)).catch((err) => console.log(err));
 })
 
 module.exports = router;
