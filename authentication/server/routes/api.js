@@ -19,12 +19,30 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 router.get('/', (req, res) => {
   res.send('from API folder')
 })
-
-// register API
+ 
 router.post('/register', (req, res) => {
   let userData = req.body
   let user = new User(userData)
   user.save().then((result) => res.status(200).send(result)).catch((err) => console.log(err));
+})
+
+router.post('/login', (req, res) => {
+  let userData = req.body
+  User.findOne({email: userData.email}, (err, advance) => {
+    if (err) {
+      console.log(err)
+    } else {
+      if (!advance) {
+        res.status(401).send("invalid email")
+      } else {
+        if (advance.password !== userData.password){
+          res.status(401).send("invalid password")
+        } else {
+          res.status(200).send(advance)
+        }
+      }
+    }
+  })
 })
 
 module.exports = router;
