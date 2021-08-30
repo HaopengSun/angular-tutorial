@@ -5,6 +5,9 @@ const User = require('../models/user')
 
 const mongoose = require('mongoose');
 
+const events = require('./events');
+const specialEvents = require('./special')
+
 require('dotenv').config()
 
 const user = process.env.DB_USERNAME
@@ -43,6 +46,14 @@ router.post('/login', (req, res) => {
       }
     }
   })
+})
+
+router.get('/events', (req,res) => {
+  res.json(events)
+})
+
+router.get('/special', (req,res) => {
+  res.json(specialEvents)
 })
 
 module.exports = router;
