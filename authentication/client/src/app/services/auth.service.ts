@@ -7,11 +7,16 @@ import User from '../User'
 })
 export class AuthService {
 
-  private _url = 'http://localhost:3000/api/register'
+  private _registerUrl = 'http://localhost:3000/api/register'
+  private _loginUrl = 'http://localhost:3000/api/login'
 
   constructor(private http:HttpClient) { }
 
   registerUser(user: User){
-    return this.http.post<User>(this._url, user)
+    return this.http.post<User>(this._registerUrl, user)
+  }
+
+  loginUser(user: User){
+    return this.http.post<User>(this._loginUrl, user)
   }
 }
