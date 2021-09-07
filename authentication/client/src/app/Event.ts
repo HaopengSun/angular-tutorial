@@ -1,6 +1,6 @@
 export default interface Event{
-    "_id": String,
-    "name": String,
-    "description": String,
-    "date": String
+    "_id": string,
+    "name": string,
+    "description": string,
+    "date": string
 }
