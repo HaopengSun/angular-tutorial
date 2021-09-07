@@ -9,3 +9,5 @@ token based authentication(JSON Web Token/JWT/header.payload.signature)
 service: generate token when users register/verify token (decrypt token and check)/send special events
 
 brower: store the token
+
+jsonwebtoken npm package/jwt.io/jwt.sign(payload, sercetOrPublicKey, [options, callback])
