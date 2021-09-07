@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { EventsComponent } from './components/events/events.component';
 import { SpecialEventsComponent } from './components/special-events/special-events.component';
 import { AuthService } from './services/auth.service';
+import { EventService } from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ AuthService ],
+  providers: [ AuthService, EventService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
